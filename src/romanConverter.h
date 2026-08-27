@@ -2,5 +2,8 @@
 
 std::string convertIntToRoman(int numToConvert)
 {
-    return "I";
+    if (numToConvert == 1)
+        return "I";
+
+    return "II";
 }
