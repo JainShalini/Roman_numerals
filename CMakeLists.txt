@@ -15,11 +15,17 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(googletest)
 
-add_executable(c___skeleton src/main.cpp)
+
+
+add_executable(c___skeleton src/main.cpp src/romanConverter.h)
 
 add_executable(c___skeleton_test
         test/dummy_test.cpp
         test/test_roman_numerals.cpp)
+
+target_include_directories(c___skeleton_test 
+        PRIVATE 
+        src)
 
 target_link_libraries(c___skeleton_test
         PRIVATE
