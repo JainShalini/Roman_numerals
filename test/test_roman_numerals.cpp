@@ -1,17 +1,15 @@
 #include <gtest/gtest.h>
 #include <romanConverter.h>
 
-TEST(test_roman_numeral_generation, number_1)
+class RomanNumeralTest : public testing::TestWithParam<std::pair<int, std::string>> {};
+
+TEST_P(RomanNumeralTest, test_roman_numeral_generation)
 {
-    EXPECT_EQ("I",convertIntToRoman(1));
+    EXPECT_EQ(GetParam().second, convertIntToRoman(GetParam().first));
 }
 
-TEST(test_roman_numeral_generation, number_2)
-{
-    EXPECT_EQ("II",convertIntToRoman(2));
-}
-
-TEST(test_roman_numeral_generation, number_3)
-{
-    EXPECT_EQ("III", convertIntToRoman(3));
-}
+INSTANTIATE_TEST_SUITE_P(, RomanNumeralTest, testing::Values(
+    std::make_pair(1, "I"),
+    std::make_pair(2, "II"),
+    std::make_pair(3, "III")
+));
