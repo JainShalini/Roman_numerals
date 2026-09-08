@@ -1,9 +1,12 @@
 #include <string>
 
-std::string convertIntToRoman(int numToConvert)
-{
-    // constructor of std::String to create a string with character repeated n times
-    if (numToConvert == 4)
-        return ("IV");
-    return std::string(numToConvert,'I');
+std::string repeatCharacter(int &numToConvert) {
+  return std::string(numToConvert, 'I');
+}
+std::string convertIntToRoman(int numToConvert) {
+  if (numToConvert == 4)
+    return ("IV");
+  // Using the constructor of std::String to create a string with character
+  // repeated n times
+  return repeatCharacter(numToConvert);
 }
