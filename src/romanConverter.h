@@ -4,17 +4,17 @@ std::string repeatCharacter(int &numToConvert) {
   return std::string(numToConvert, 'I');
 }
 
-void appendRomanNumeral(int &numToConvert, std::string &roman) {
-  if (numToConvert >= 10) {
+void appendRomanNumeral(int &numToConvert, std::string &roman, int romanNumeralValue) {
+  if (numToConvert >=  romanNumeralValue) {
     roman += "X";
-    numToConvert -= 10;
+    numToConvert -= romanNumeralValue;
   }
 }
 std::string convertIntToRoman(int numToConvert) {
 
   std::string roman("");
 
-  appendRomanNumeral(numToConvert, roman);
+  appendRomanNumeral(numToConvert, roman, 10);
 
   if (numToConvert >= 9) {
     roman += "IX";
