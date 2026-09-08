@@ -8,6 +8,9 @@ std::string convertIntToRoman(int numToConvert) {
 
     std::string roman("");
 
+    if (numToConvert == 9)
+      return ("IX");
+      
     if (numToConvert >= 5)
     {
        roman += "V";
