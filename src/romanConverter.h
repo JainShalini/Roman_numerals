@@ -24,7 +24,10 @@ std::string convertIntToRoman(int numToConvert) {
     }
 
     if (numToConvert == 4)
-        return ("IV");
+    {
+        roman += "IV";
+        numToConvert = numToConvert - 4;
+    }
 
     return roman+= repeatCharacter(numToConvert);
 }
