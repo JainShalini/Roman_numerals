@@ -15,7 +15,10 @@ std::string convertIntToRoman(int numToConvert) {
     }
 
     if (numToConvert == 9)
-      return ("IX");
+    {
+      roman += "IX";
+      numToConvert -= 9;
+    }
 
     if (numToConvert >= 5)
     {
