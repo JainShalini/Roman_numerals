@@ -7,6 +7,7 @@ std::string repeatCharacter(int &numToConvert) {
 std::string convertIntToRoman(int numToConvert) {
   if (numToConvert == 4)
     return ("IV");
-
+  if (numToConvert == 5)
+    return ("V");
   return repeatCharacter(numToConvert);
 }
