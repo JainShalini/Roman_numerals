@@ -14,7 +14,7 @@ std::string convertIntToRoman(int numToConvert) {
         numToConvert -= 10;
     }
 
-    if (numToConvert == 9)
+    if (numToConvert >= 9)
     {
       roman += "IX";
       numToConvert -= 9;
@@ -26,7 +26,7 @@ std::string convertIntToRoman(int numToConvert) {
        numToConvert = numToConvert - 5; 
     }
 
-    if (numToConvert == 4)
+    if (numToConvert >= 4)
     {
         roman += "IV";
         numToConvert = numToConvert - 4;
