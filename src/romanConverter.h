@@ -1,9 +1,5 @@
 #include <string>
 
-std::string repeatCharacter(int &numToConvert) {
-  return std::string(numToConvert, 'I');
-}
-
 void appendRomanNumeral(int &numToConvert, std::string &roman, int romanNumeralValue, std::string romanNumeral) {
   while (numToConvert >=  romanNumeralValue) {
     roman += romanNumeral;
@@ -22,5 +18,7 @@ std::string convertIntToRoman(int numToConvert) {
 
   appendRomanNumeral(numToConvert, roman, 4, "IV");
 
-  return roman += repeatCharacter(numToConvert);
+  appendRomanNumeral(numToConvert,roman, 1, "I");
+
+  return roman;
 }
