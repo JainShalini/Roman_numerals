@@ -17,7 +17,5 @@ std::string convertIntToRoman(int numToConvert) {
     if (numToConvert == 4)
         return ("IV");
 
-    roman+= repeatCharacter(numToConvert);
-
-    return roman;
+    return roman+= repeatCharacter(numToConvert);
 }
