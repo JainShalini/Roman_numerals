@@ -11,5 +11,6 @@ TEST_P(RomanNumeralTest, test_roman_numeral_generation)
 INSTANTIATE_TEST_SUITE_P(, RomanNumeralTest, testing::Values(
     std::make_pair(1, "I"),
     std::make_pair(2, "II"),
-    std::make_pair(3, "III")
+    std::make_pair(3, "III"),
+    std::make_pair(4, "IV")
 ));
