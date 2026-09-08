@@ -4,9 +4,9 @@ std::string repeatCharacter(int &numToConvert) {
   return std::string(numToConvert, 'I');
 }
 
-void appendRomanNumeral(int &numToConvert, std::string &roman, int romanNumeralValue) {
+void appendRomanNumeral(int &numToConvert, std::string &roman, int romanNumeralValue, std::string romanNumeral) {
   if (numToConvert >=  romanNumeralValue) {
-    roman += "X";
+    roman += romanNumeral;
     numToConvert -= romanNumeralValue;
   }
 }
@@ -14,7 +14,7 @@ std::string convertIntToRoman(int numToConvert) {
 
   std::string roman("");
 
-  appendRomanNumeral(numToConvert, roman, 10);
+  appendRomanNumeral(numToConvert, roman, 10, "X");
 
   if (numToConvert >= 9) {
     roman += "IX";
