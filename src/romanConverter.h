@@ -20,11 +20,7 @@ std::string convertIntToRoman(int numToConvert) {
 
   appendRomanNumeral(numToConvert, roman, 5, "V");
 
-
-  if (numToConvert >= 4) {
-    roman += "IV";
-    numToConvert = numToConvert - 4;
-  }
+  appendRomanNumeral(numToConvert, roman, 4, "IV");
 
   return roman += repeatCharacter(numToConvert);
 }
