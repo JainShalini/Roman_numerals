@@ -5,7 +5,7 @@ std::string repeatCharacter(int &numToConvert) {
 }
 
 void appendRomanNumeral(int &numToConvert, std::string &roman, int romanNumeralValue, std::string romanNumeral) {
-  if (numToConvert >=  romanNumeralValue) {
+  while (numToConvert >=  romanNumeralValue) {
     roman += romanNumeral;
     numToConvert -= romanNumeralValue;
   }
