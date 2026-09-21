@@ -6,12 +6,16 @@ void appendRomanNumeral(int &numToConvert, std::string &roman, int romanNumeralV
     numToConvert -= romanNumeralValue;
   }
 }
+
+
 std::string convertIntToRoman(int numToConvert) {
 
   std::string roman("");
 
+  appendRomanNumeral(numToConvert, roman, 400, "CD");
+
   appendRomanNumeral(numToConvert, roman, 100, "C");
-  
+
   appendRomanNumeral(numToConvert, roman, 90, "XC");
 
   appendRomanNumeral(numToConvert, roman, 50, "L");
