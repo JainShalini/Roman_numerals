@@ -23,16 +23,12 @@ constexpr std::array RomanNumeralCharacters{
 std::string convertIntToRoman(int numToConvert) {
   std::string roman;
 
-  if (numToConvert <= 0) {
-    return roman;
-  }
-
   for (const auto& [value, numeral] : RomanNumeralCharacters) {
     while (numToConvert >= value) {
       roman += numeral;
       numToConvert -= value;
     }
   }
-
+  
   return roman;
 }
