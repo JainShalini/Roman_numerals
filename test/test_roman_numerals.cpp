@@ -25,5 +25,6 @@ INSTANTIATE_TEST_SUITE_P(, RomanNumeralTest, testing::Values(
     std::make_pair(50, "L"),
     std::make_pair(90, "XC"),
     std::make_pair(100, "C"),
-    std::make_pair(400, "CD")
+    std::make_pair(400, "CD"),
+    std::make_pair(500, "D")
 ));
