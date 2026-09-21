@@ -10,6 +10,8 @@ std::string convertIntToRoman(int numToConvert) {
 
   std::string roman("");
 
+  appendRomanNumeral(numToConvert, roman, 100, "C");
+  
   appendRomanNumeral(numToConvert, roman, 90, "XC");
 
   appendRomanNumeral(numToConvert, roman, 50, "L");
