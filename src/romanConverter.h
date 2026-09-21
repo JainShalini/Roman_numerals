@@ -12,6 +12,8 @@ std::string convertIntToRoman(int numToConvert) {
 
   std::string roman("");
 
+  appendRomanNumeral(numToConvert, roman, 900, "CM");
+
   appendRomanNumeral(numToConvert, roman, 500, "D");
 
   appendRomanNumeral(numToConvert, roman, 400, "CD");
