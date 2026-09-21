@@ -1,42 +1,38 @@
+#include <array>
 #include <string>
+#include <utility>
 
-void appendRomanNumeral(int &numToConvert, std::string &roman, int romanNumeralValue, std::string romanNumeral) {
-  while (numToConvert >=  romanNumeralValue) {
-    roman += romanNumeral;
-    numToConvert -= romanNumeralValue;
-  }
-}
-
+namespace {
+constexpr std::array<std::pair<int, const char*>, 13> RomanNumeralCharacters{{
+    {1000, "M"},
+    {900, "CM"},
+    {500, "D"},
+    {400, "CD"},
+    {100, "C"},
+    {90, "XC"},
+    {50, "L"},
+    {40, "XL"},
+    {10, "X"},
+    {9, "IX"},
+    {5, "V"},
+    {4, "IV"},
+    {1, "I"},
+}};
+} // namespace
 
 std::string convertIntToRoman(int numToConvert) {
+  std::string roman;
 
-  std::string roman("");
+  if (numToConvert <= 0) {
+    return roman;
+  }
 
-  appendRomanNumeral(numToConvert, roman, 1000, "M");
-
-  appendRomanNumeral(numToConvert, roman, 900, "CM");
-
-  appendRomanNumeral(numToConvert, roman, 500, "D");
-
-  appendRomanNumeral(numToConvert, roman, 400, "CD");
-
-  appendRomanNumeral(numToConvert, roman, 100, "C");
-
-  appendRomanNumeral(numToConvert, roman, 90, "XC");
-
-  appendRomanNumeral(numToConvert, roman, 50, "L");
-
-  appendRomanNumeral(numToConvert, roman, 40, "XL");
-
-  appendRomanNumeral(numToConvert, roman, 10, "X");
-
-  appendRomanNumeral(numToConvert, roman, 9, "IX");
-
-  appendRomanNumeral(numToConvert, roman, 5, "V");
-
-  appendRomanNumeral(numToConvert, roman, 4, "IV");
-
-  appendRomanNumeral(numToConvert,roman, 1, "I");
+  for (const auto& [value, numeral] : RomanNumeralCharacters) {
+    while (numToConvert >= value) {
+      roman += numeral;
+      numToConvert -= value;
+    }
+  }
 
   return roman;
 }
