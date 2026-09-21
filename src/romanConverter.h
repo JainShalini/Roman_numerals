@@ -3,21 +3,21 @@
 #include <utility>
 
 namespace {
-constexpr std::array<std::pair<int, const char*>, 13> RomanNumeralCharacters{{
-    {1000, "M"},
-    {900, "CM"},
-    {500, "D"},
-    {400, "CD"},
-    {100, "C"},
-    {90, "XC"},
-    {50, "L"},
-    {40, "XL"},
-    {10, "X"},
-    {9, "IX"},
-    {5, "V"},
-    {4, "IV"},
-    {1, "I"},
-}};
+constexpr std::array RomanNumeralCharacters{
+    std::pair{1000, "M"},
+    std::pair{900, "CM"},
+    std::pair{500, "D"},
+    std::pair{400, "CD"},
+    std::pair{100, "C"},
+    std::pair{90, "XC"},
+    std::pair{50, "L"},
+    std::pair{40, "XL"},
+    std::pair{10, "X"},
+    std::pair{9, "IX"},
+    std::pair{5, "V"},
+    std::pair{4, "IV"},
+    std::pair{1, "I"},
+};
 } // namespace
 
 std::string convertIntToRoman(int numToConvert) {
